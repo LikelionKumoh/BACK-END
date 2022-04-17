@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800&display=swap');
+*{
+    font-family: 'Montserrat';
+}
+
+/* div{
+    border: 1px solid black;
+} */
+.bigone{
+    width: 1550px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.big-box1{
+    display: flex;
+    width: 1550px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.top{
+    width: 90%;
+    margin: 10px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    width: 55%;
+    height: 75%
+}
+.topmenu{
+    width: 80%;
+}
+.minimenu{
+    display: flex;
+    justify-content: flex-end;
+    height: 34%;
+}
+
+.p{
+    margin-right: 10px;
+    font-size: 15px;
+    border-bottom: 1px solid black;
+    height: 25px;
+    margin-top: 5px;
+    width: auto;
+    background-color: white;
+}
+
+.p:hover{
+    color: black;
+    font-weight: bold;
+}
+.input{
+    display: flex;
+    height: 30%;
+} 
+.inputbutton{
+    display: flex;
+    width: 80%;
+    margin-left: 1%;
+    height: 100%;
+}
+.button{
+    width: 12%;
+}
+button{
+    width: 99%;
+    height: 103%;
+    font-size: 25px;
+    text-align: center;
+    background-color: orange;
+    border: none;
+    cursor: pointer;
+}
+.InputBar{
+    width: 80%;
+    height: 95%;
+    border: opx solid orange;
+    margin-right: 1%;
+}
+input{
+    width: 99%;
+    height: 85%;
+    font-size: 18px;
+    border: 5px solid orange;
+}
+.big-box2{
+    height: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    margin-top: 5px;
+    display: flex;
+    border-top: 7px double orange;
+    border-bottom: 7px double orange;
+    border-left: 0px;
+    border-right: 0px;
+    padding-left: 10%;
+    align-items: center;
+}
+.category{
+    color: rgb(143, 142, 142);
+    background-color: white;
+    border: 0;
+    width: auto;
+    margin-right: 15px;
+    height: 96%;
+    font-weight: bold;
+}
+
+.category:hover{
+    color: black;
+}
+
+.big-box3{
+    width: 1100px;
+    height: 1200px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.left-big-box{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+.right-big-box{
+    width: 35%;
+}
+
+.main-logo{
+    width: 100%;
+    height: 100%;
+}
+
+.message-box{
+    margin-top: 15px;
+    height: 35px;
+    background-color: #FFB34D;
+}
+
+.message{
+    text-align: left;
+    font-size: 25px;
+    font-weight: bolder;
+    padding-left: 5px;
+    margin-top: 0%;
+    margin-bottom: 15px;
+}
+
+.bootcamp{
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 600px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.bootcamp-button{
+    width: 30.7%;
+    background-color: antiquewhite;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.bootcamp-button:hover{
+    background-color: #FFB34D;
+}
+
+.위코드{
+    color: navy;
+    margin: 0;
+    font-size: 25px;
+}
+.항해99{
+    color: red;
+    margin: 0;
+    font-size: 25px;
+}
+.ZERO-BASE{
+    color: rgb(18, 161, 18);
+    margin: 0;
+    font-size: 25px;
+}
+.CODE-IT{
+    color: purple;
+    margin: 0;
+    font-size: 25px;
+}
+.FAST-CAMPUS{
+    color: brown;
+    margin: 0;
+    font-size: 25px;
+}
+.JUST-CODE{
+    color: rgb(134, 82, 13);
+    margin: 0;
+    font-size: 25px;
+}
+.일팔공캠프{
+    color: rgb(72, 169, 235);
+    margin: 0;
+    font-size: 25px;
+}
+.우아한테크코스{
+    color: rgb(0, 218, 218);
+    margin: 0;
+    font-size: 25px;
+}
+.스파르타코딩클럽{
+    color: rgb(126, 194, 0);
+    margin: 0;
+    font-size: 25px;
+}
+
+.info{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.information{
+    width: 33%;
+    height: 99%;
+    box-shadow: 2px 1px 3px 0px rgb(177, 177, 177);
+}
+
+.info-img{
+    height: 65%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-message{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.설명{
+    margin-left: 5px;
+    font-size: 25px;
+}
+
+.info-img1{
+    width: 150px;
+    height: 150px;
+}
+
+.login-box{
+    width: 100%;
+    height: 20%;
+    background-color: rgba(236, 236, 236, 0.493);
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.Input-box{
+    height: 70%;
+    width: 100%;
+    display: flex;
+}
+.Input-box-left{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.id-box{
+    height: 40%;
+    width: 92%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 226, 189);
+}
+.ID{
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 25px;
+    font-size: 20px;
+}
+
+.ID-input{
+    margin: 3px;
+    width: 60%;
+    height: 70%;
+    border: 0;
+}
+.pw-box{
+    height: 40%;
+    width: 92%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 226, 189);
+}
+.PW{
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.PW-input{
+    margin: 3px;
+    width: 60%;
+    height: 70%;
+    border: 0;
+}
+
+.Input-box-right{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-button{
+    height: 80%;
+    width: 80%;
+    border-radius: 10%;
+    color: white;
+    background-color: #ff771d;
+}
+
+.login-button:hover{
+    background-color: #FFB34D;
+}
+
+.signup{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signup-button{
+    width: 95%;
+    color: white;
+    font-weight: bold;
+    height: 90%;
+    margin: 5px;
+    background-color: #ff771d;
+}
+.signup-button:hover{
+    background-color: #FFB34D;
+}
+
+.right-banner-img{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-banner{
+    width: 80%;
+    height: 80%;
+}
+
+.logo-box{
+    width: 100%;
+    height: 45.2%;
+}
+.logo-box1{
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+.logo-box2{
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+.로고후보{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.로고후보그림{
+    width: 150px;
+    height: 150px;
+}

@@ -21,7 +21,7 @@
 |2022.03.25|<img src="https://img.shields.io/badge/도서관 5층 세미나실-F6C915?logo=Home Assistant Community Store&logoColor=white"/>|금오공과대학교 멋쟁이사자처럼 10기 OT| Notion,GitHub 가입하기|
 |2022.04.07| <img src="https://img.shields.io/badge/Kumoh likelion Discord-5865F2?logo=Discord&logoColor=white"/>| 일단 만드는 HTML/CSS| 나만의 검색 포털 만들기|
 |2022.04.14| <img src="https://img.shields.io/badge/도서관 5층 세미나실-F6C915?logo=Home Assistant Community Store&logoColor=white"/>|  ⭐️special⭐️ GitHub 특강| GitHub에 과제 제출해보기|
-|2022.05.05|공지 예정| 일단 만드는 Python |공지 예정|
+|2022.05.06|<img src="https://img.shields.io/badge/도서관 5층 세미나실-F6C915?logo=Home Assistant Community Store&logoColor=white"/>| 일단 만드는 Python |공지 예정|
 |2022.05.12|공지 예정| [심화] 같이 푸는 Python |공지 예정|
 |2022.05.19~|공지 예정| 트랙별 교육 |공지 예정|
   

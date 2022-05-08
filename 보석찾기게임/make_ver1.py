@@ -1,6 +1,6 @@
-#함수 사용X 기본코드
-import random
+import random #함수 및 키보드 입력 사용
 import time
+import keyboard
 
 mapsize=int(input("맵의 크기를 입력해주세요: "))
 bombcount=int(input("폭탄의 개수를 정해 주세요: "))
@@ -28,23 +28,21 @@ while True:
     if map[x][y]!='🔳' and map[x][y]!='🔺':
         map[x][y]='💠'
         break
-
-print("================게임을 시작합니다.================")
-
-while True:
-    
-    for x in range(mapsize):
-        for y in range(mapsize):
-            print(map[x][y], end='')
-        print()
-
-    print("1.아래로 이동")
-    print("2.위로 이동")
-    print("3.오른쪽으로 이동")
-    print("4.왼쪽으로 이동")
-    print("5.게임 종료")
-
-    select = int(input("원하는 숫자를 입력해 주세요: "))
+def go_key():
+    if keyboard.read_key() == "down":
+        return 1
+    elif keyboard.read_key() == "up":
+        return 2
+    elif keyboard.read_key() == "right":
+        return 3
+    elif keyboard.read_key() == "left":
+        return 4
+    elif keyboard.read_key() == "esc":
+        return 5
+def move():
+    global UserX, UserY, play
+    print("원하는 방향을 입력하세요(ESC를 누르면 종료)")
+    select = go_key()
 
     if select==1:
         x = UserX+1
@@ -55,10 +53,10 @@ while True:
             time.sleep(1)
         elif map[x][y]=='🔺':
             print("사망하셨습니다.")
-            break
+            play=False
         elif map[x][y]=='💠':
             print("승리하셨습니다.")
-            break
+            play=False
         else:
             map[x][y]='🔳'
             map[UserX][UserY]='⬜'
@@ -75,10 +73,10 @@ while True:
             time.sleep(1)
         elif map[x][y]=='🔺':
             print("사망하셨습니다.")
-            break
+            play=False
         elif map[x][y]=='💠':
             print("승리하셨습니다.")
-            break
+            play=False
         else:
             map[x][y]='🔳'
             map[UserX][UserY]='⬜'
@@ -95,10 +93,10 @@ while True:
             time.sleep(1)
         elif map[x][y]=='🔺':
             print("사망하셨습니다.")
-            break
+            play=False
         elif map[x][y]=='💠':
             print("승리하셨습니다.")
-            break
+            play=False
         else:
             map[x][y]='🔳'
             map[UserX][UserY]='⬜'
@@ -115,10 +113,10 @@ while True:
             time.sleep(1)
         elif map[x][y]=='🔺':
             print("사망하셨습니다.")
-            break
+            play=False
         elif map[x][y]=='💠':
             print("승리하셨습니다.")
-            break
+            play=False
         else:
             map[x][y]='🔳'
             map[UserX][UserY]='⬜'
@@ -128,5 +126,24 @@ while True:
             time.sleep(1)
     elif select==5:
         print("종료합니다.")
-        break
+        play=False
+
+print("================게임을 시작합니다.================")
+play=True
+while play:
+    
+    for x in range(mapsize):
+        for y in range(mapsize):
+            print(map[x][y], end='')
+        print()
+
+    print("1.아래로 이동")
+    print("2.위로 이동")
+    print("3.오른쪽으로 이동")
+    print("4.왼쪽으로 이동")
+    print("5.게임 종료")
+
+    move()
+
+    
     

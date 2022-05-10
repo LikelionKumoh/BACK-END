@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\School\\web"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "BACK-END"
+	}
+}

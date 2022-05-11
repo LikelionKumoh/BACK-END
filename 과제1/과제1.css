@@ -1,0 +1,220 @@
+/* div{
+    border: 1px solid black;
+} */
+
+body{
+    display: flex;
+    justify-content: center;
+}
+.top {
+    margin: 10px;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.img {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 60px;
+}
+
+.menuInput {
+    width: 80%;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+p{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.all{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inputButton{
+    display: flex;
+    width: 90%;
+}
+
+.TI{
+    width: 100%;
+    height: 20px;
+}
+
+.inputBar{
+    width: 90%;
+    margin-right: 8px;
+}
+
+.button{
+    width: 15%;
+}
+
+.input {
+    width: 100%;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid{
+    height: 40px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 40px;
+    font-size: large;
+    border: 2px double #7fc3e7;
+    margin-bottom: 30px;
+}
+
+.mid-nav{
+    margin-right: 20px;
+}
+
+.bottom{
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-top{
+    height: 40%;
+    width: 100%;
+}
+
+.bottom-1{
+    width: 60%;
+}
+
+.bottom-title{
+    background-color: #7fc3e7;
+    height: 30px;
+    font-size: 20pt;
+    padding-top: 5px;
+}
+
+.bottom-box{
+    display: flex;
+    justify-content: space-around;
+    height: 40%;
+    margin: 20px 0px;
+}
+
+.bottom-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    background-color: aliceblue;
+}
+
+.bottom-2{
+    width: 40%;
+}
+
+.login-box{
+    height: 30%;
+    background-color: #7fc3e7;
+}
+.WrapRightLogin{
+    flex-direction: column;
+}
+.LoginGroup{
+    height: 70%;
+    background-color: #7fc3e7;
+}
+.LoginInput{
+    width: 70%;
+    background-color: #7fc3e7;
+    margin: 8px;
+}
+
+
+.TextBlock{
+    border: 3px solid #7fc3e7;
+    color: blue;
+    margin-top: 10px;
+    height: 30px;
+}
+.TextTitle{
+    height: 6%;
+    text-align: center;
+    background-color: #7fc3e7;
+    padding-top: 10px;
+}
+.TextL{
+    color: #2ba6e9;
+    margin-right: 10px;
+    font-size: 1pt;
+}
+.TextR{
+    color: black;
+    font-size: 10pt;
+}
+.IdInput{
+    height: 50%;
+}
+.IB{
+    width: 95%;
+}
+.PwInput{
+    height: 50%;
+}
+.InputL{
+    width: 30%;
+    font-weight: bold;
+    color: #2ba6e9;
+}
+.InputR{
+    width: 70%;
+    height: 40%;
+    border: 1px solid white;
+}
+.LoginGroup{
+    display: flex;
+}
+.LoginButton{
+    width: 30%;
+    height: 100%;
+}
+.LButton{
+    background-color: #7fc3e7;
+    color: #2ba6e9;
+    width: 90%;
+    height: 70%;
+    margin-right: 10%;
+    border-color: #2ba6e9;
+}
+.TextMin{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.SignUpButton{
+    width: 100%;
+    height: 30%;
+}
+.SUButton{
+    width: 95%;
+    height: 80%;
+    background-color: #7fc3e7;
+    color: #2ba6e9;
+    border-color: #2ba6e9;
+}

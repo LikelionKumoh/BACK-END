@@ -13,15 +13,19 @@ def mapSetting(mapSize, bombCount):
         temp=["⬜" for _ in range(mapSize)]
         map.append(temp)
     map[hx][hy]="⬛️"
-    x_pos1 = random.randint(1, mapSize-1)
-    y_pos1 = random.randint(1, mapSize-1)
-    map[x_pos1][y_pos1] = "★"
+    while True:        
+        x_pos1 = random.randint(0, mapSize-1)
+        y_pos1 = random.randint(0, mapSize-1)
+        if(x_pos1!=0 or y_pos1!=0):
+            map[x_pos1][y_pos1] = "★"
+            break
     for i in range(0, bombCount):
-        x_pos2 = random.randint(0, mapSize-1)
-        y_pos2 = random.randint(0, mapSize-1)
-        map[x_pos2][y_pos2]="▲"
-        if ((x_pos2==0 and y_pos2==0) or (x_pos1==x_pos2 and y_pos1 == y_pos2)):
-            i=i-1
+        while True:
+            x_pos2 = random.randint(0, mapSize-1)
+            y_pos2 = random.randint(0, mapSize-1)
+            if(map[x_pos2][y_pos2]!='⬛️') and (map[x_pos2][y_pos2] !='★') and (map[x_pos2][y_pos2]!='▲'):
+                map[x_pos2][y_pos2] ="▲"
+                break
         
 mapSetting(mapSize, bombCount)
 

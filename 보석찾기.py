@@ -17,8 +17,8 @@ def mapSetting(mapSize, bombCount):
     y_pos1 = random.randint(1, mapSize-1)
     map[x_pos1][y_pos1] = "★"
     for i in range(0, bombCount):
-        x_pos2 = random.randint(0, mapSize-1)
-        y_pos2 = random.randint(0, mapSize-1)
+        x_pos2 = random.randint(1, mapSize-1)
+        y_pos2 = random.randint(1, mapSize-1)
         map[x_pos2][y_pos2]="▲"
         if ((x_pos2==0 and y_pos2==0) or (x_pos1==x_pos2 and y_pos1 == y_pos2)):
             i=i-1

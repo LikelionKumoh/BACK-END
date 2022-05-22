@@ -36,6 +36,6 @@ text_file.close()
 # message["To"] = "junbs1498@naver.com"
 
 # smtp = smtplib.SMTP_SSL(SMTP_SERVER,SMTP_PORT)
-# smtp.login("redbull1171@gmail.com","dlsrksdlsrk11")
+# smtp.login("redbull1171@gmail.com","##########")
 # smtp.send_message(message)
 # smtp.quit()

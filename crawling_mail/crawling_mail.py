@@ -46,7 +46,7 @@ def sendEmail(addr):
 
 
 message["Subject"] = "크롤링해서 메일보내기[최영민]."
-message["From"] = "ymchoi1006@gmail.com"
+message["From"] = "#######@gmail.com"
 message["To"] = "kit@likelion.org"
 
 
@@ -57,7 +57,7 @@ message.add_attachment(txt_file,maintype='txt', subtype = 'plain', filename = tx
 
 
 smtp = smtplib.SMTP_SSL(SMTP_SERVER,SMTP_PORT)
-smtp.login("ymchoi1006@gmail.com","act3256100")
+smtp.login("#######@gmail.com","#######")
 
 #유효성검사함수
 sendEmail("kit@likelion.org")

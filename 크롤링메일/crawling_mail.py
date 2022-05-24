@@ -19,6 +19,7 @@ date = datetime.today().strftime("%Y년 %m월 %d일의 악보바다 피아노악
 
 rank_file = open("piano.txt", "a", encoding='utf-8')
 rank_file.write(date+results.get_text())
+rank_file.close()
 
 html_file = open("akbobada.html", "w", encoding='utf-8')
 html_file.write(response.text)

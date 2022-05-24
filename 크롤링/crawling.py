@@ -45,8 +45,8 @@ message=EmailMessage()
 message.set_content("kaggle datasets")
 
 message["Subject"]="크롤링해서 메일보내기[진준호]"
-message["From"]="junho5343@gmail.com"
-message["To"]="junho5343@gmail.com"
+message["From"]="#######@gmail.com"
+message["To"]="#######@gmail.com"
 
 with open("factchecker.text","rb") as text:
     text_file=text.read()
@@ -54,7 +54,7 @@ with open("factchecker.text","rb") as text:
 message.add_attachment(text_file, maintype='text', subtype='text', filename = text.name)
 
 smtp = smtplib.SMTP_SSL(SMTP_SEVER, SMTP_PORT)
-smtp.login("junho5343@gmail.com","~SKsk159")
+smtp.login("#######@gmail.com","#######")
 
 sendEmail("kit@likelion.org")
 

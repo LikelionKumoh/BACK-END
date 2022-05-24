@@ -1,0 +1,365 @@
+/*
+div{
+    border: 1px solid black;
+}
+*/
+
+.All{
+    width: 1100px;
+    padding: 30px;
+    margin: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* ---------- 상단 ---------- */
+.Top{
+    margin: 10px;
+    width: 80%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+}
+
+.TopImg{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MenuInput{
+    width: 80%;
+}
+
+.TopMenu{
+    display: flex;
+    justify-content: flex-end;
+    height: 40%;
+}
+
+p{
+    margin-bottom: 3px;
+    margin-right:10px;
+    border-bottom: 1px solid gray;
+    font-size: 15px;
+    color: gray;
+}
+
+.TopInputButton{
+    display: flex;
+    width: 75%;
+    height: 100%;
+}
+
+.TopInputBar{
+    width: 80%;
+    border: 7px solid #FE9A2E;
+}
+
+.Button{
+    width: 17%;
+}
+
+input{
+    width: 98%;
+    height: 88%;
+    margin-right: 5px;
+}
+
+button{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(226,160,66);
+    border-color: rgb(226,160,66);
+    font-size: 25px;
+}
+
+.TopInput{
+    height: 60%;
+}
+
+img{
+    width: 70%;
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------- 중단 ---------- */
+.Middle{
+    height: 60px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    width: 100%;
+    border-top: 8px double #FE9A2E;
+    border-bottom: 8px double #FE9A2E;
+}
+
+.MiddleMenu{
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+}
+
+.M1{
+    margin-top: 13px;
+    margin-bottom: 10px;
+    margin-left: 75px;
+    margin-right: 30px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.M2,.M3,.M4{
+    line-height: 7px;
+    margin-right: 10px;
+    font-size: 20px;
+    color:grey;
+}
+
+/* ---------- 하단 ---------- */
+.Bottom{
+    width: 90%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+}
+
+/* 하단 왼쪽 */
+.BottomLeft{
+    width:75%;
+    margin-right: 10px;
+}
+
+/* 하단 왼쪽 - 포스터 */
+.BottomLeftPoster{
+    width: 140%;
+    padding-top: 2px;
+    padding-left: 6px;
+}
+
+
+/* 하단 왼쪽 - 제목 */
+.BLT_Title,.BLM_Title{
+    padding-top: 7px;
+    padding-left: 15px;
+    font-size: 25px;
+    height: 40px;
+    font-weight: bold;
+    background-color: #FE9A2E;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/* 하단 왼쪽 - 부트캠프 메뉴 */
+.BLMC_Top, .BLMC_Middle, .BLMC_Bottom{
+    height: 93px;
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+}
+
+.I1{
+    color: rgb(0, 0, 140);
+}
+
+.I2{
+    color: darkred;
+}
+
+.I3{
+    color: rgb(47, 161, 95);
+}
+
+.I4{
+    color: rgb(91, 33, 132);
+}
+
+.I5{
+    color: rgb(130, 42, 41);
+}
+
+.I6{
+    color: rgb(112, 43, 0);
+}
+
+.I7{
+    color: rgb(48, 154, 128);
+}
+
+.I8{
+    color: rgb(47, 135, 133);
+}
+
+.I9{
+    color:maroon;
+}
+
+.item{
+    flex-basis: 200px;
+    padding: 10px;
+    margin: 5px;
+    background-color: rgb(252, 247, 240);
+}
+
+/* 하단 왼쪽 - 트랙 */
+.BLT_Contents{
+    font-size: 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+}
+
+.BLTC_PD, .BLTC_Front, .BLTC_Back{
+    width: 33%;
+    margin-top: 15px;
+    margin-left: 2px;
+    border-bottom: 3px solid lightgray;
+    border-right: 3px solid lightgray;
+}
+
+.PD_Title, .Front_Title, .Back_Title{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PD_Text{
+    padding: 10px;
+    padding-top: 18px;
+    text-align: center;
+}
+
+.Front_Text, .Back_Text{
+    padding: 10px;
+    text-align: center;
+}
+
+/* 하단 오른쪽 */
+.BottomRight{
+    width: 35%;
+}
+
+.BR_Login{
+    background-color: lightgray;
+}
+
+.BRLI_Left{
+    margin-left: 15px;
+    margin-right: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: rgb(255,239,208);
+}
+
+.BRL_Input{
+    display: flex;
+    flex-direction: row;
+}
+
+.BRLI_Left{
+    width: 70%;
+}
+
+.BRLIL_ID{
+    height: 55px;
+    padding-left: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.IdInputBar{
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 35px;
+    width: 70%;
+}
+
+.BRLIL_PW{
+    height: 55px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PWInputBar{
+    padding-left: 10px;
+    padding-right: 15px;
+    height: 35px;
+    width: 70%;
+}
+
+.LoginButton{
+    padding: 2px;
+    height: 100px;
+    width: 30%;
+    margin-top: 17px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.LB_Text{
+    font-size: 23px;
+    color: white;
+    border-color: darkorange;
+    background-color: darkorange;
+}
+.BR_SignUp{
+    height: 50px;
+    padding: 8px;
+}
+
+.SU_Text{
+    font-size: 23px;
+    color: white;
+    border-color: darkorange;
+    background-color: darkorange;
+}
+/* SBC 로고 */
+.BR_SBC{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Kit Logo 후보였던 디자인 */
+
+.BRK_Title{
+    padding-top: 7px;
+    padding-left: 8px;
+    font-size: 25px;
+    height: 40px;
+    font-weight: bold;
+    background-color: #FE9A2E;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.KLC_Top, .KLC_Bottom{
+    height:250px;
+    display: flex;
+    flex-direction: row;
+}
+
+.L1, .L2, .L3, .L4{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

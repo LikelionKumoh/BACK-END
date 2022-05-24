@@ -4,7 +4,10 @@ from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
 
 import smtplib
+from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
 
 
 def set_chrome_driver():
@@ -29,17 +32,28 @@ for i in soup.findAll('ul', class_="record_list_team__2NtZO"):
         else:
             text += f"{cnt}위: {i[i.find('고') + 1:]}\n"
         cnt += 1
-print(text)
+
+with open('crawl_data.txt', 'w') as f:
+    f.write(text)
 
 smtp_gmail = smtplib.SMTP('smtp.gmail.com', 587)
 
 s = smtplib.SMTP('smtp.gmail.com', 587)
 s.starttls()
-s.login('아이디는 그냥 비밀입니다', '비밀번호는 비밀입니당')
+s.login('#####@gmail.com', '#######')
 
-msg = MIMEText(text)
+msg = MIMEMultipart()
+article = MIMEText("과제 제출입니다!")
 msg['Subject'] = 'BACKEND - 서장준'
+msg.attach(article)
 
-s.sendmail("daki403.1@gmail.com", "kit@likelion.org", msg.as_string())
+attachment = open('crawl_data.txt', 'rb')
+part = MIMEBase('application', 'octet-stream')
+part.set_payload(attachment.read())
+encoders.encode_base64(part)
+part.add_header('Content-Disposition', "attachment; filename= home_work.txt")
+msg.attach(part)
+
+s.sendmail("#####@gmail.com", "###@likelion.org", msg.as_string())
 
 s.quit()

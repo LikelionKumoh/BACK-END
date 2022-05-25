@@ -1,3 +1,4 @@
+from os import replace
 import smtplib
 from email.message import EmailMessage
 from urllib import response
@@ -38,6 +39,7 @@ day=["mon","tue","wed","thu","fri","sat","sun"]
 index_d=day.index(temp)
 rank=soup.select("div.col_inner")[index_d]
 
+# 쓰레기값 제거
 em=soup.findAll('em')
 for em in em:
      soup.em.extract()
@@ -45,7 +47,13 @@ for span in soup.findAll('span'):
     span.replace_with("")
 
 rank_file=open("rank.txt","w+",encoding='UTF-8')
-rank_file.write(rank.get_text())
+# print(rank.get_text())
+result = rank.get_text()
+result = re.sub("\s\s\s\s", "\n", result)
+result = re.sub("\s\s+", "\n", result)
+
+rank_file.write(result)
+
 rank_file.close()
 
 SMTP_SEVER="smtp.gmail.com"
@@ -55,16 +63,16 @@ message=EmailMessage()
 message.set_content("네이버 웹툰입니다.")
 
 message["Subject"]="크롤링해서 메일보내기[안현진]"
-message["From"]="guswlsdl0121@gmail.com"
-message["To"]="guswlsdl0121@gmail.com"
+message["From"]="#########@gmail.com"
+message["To"]="kit@likelion.org"
 
-with open("rank.txt","rb") as text:
-    text_file=text.read()
+with open("rank.txt","rb") as txt:
+    txt_file=txt.read()
 
-message.add_attachment(text_file, maintype='text', subtype='text')
+message.add_attachment(txt_file, maintype='txt', subtype='txt', filename=txt.name)
 
 smtp = smtplib.SMTP_SSL(SMTP_SEVER, SMTP_PORT)
-smtp.login("guswlsdl0121@gmail.com","aqw3672a")
+smtp.login("######","######")
 
 sendEmail("kit@likelion.org")
 

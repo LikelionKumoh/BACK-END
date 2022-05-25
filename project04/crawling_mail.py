@@ -31,7 +31,7 @@ with open('crawling.txt', 'rb') as f:
     message.add_attachment(f.read(), maintype='text', subtype="plain", filename=f.name)
 
 smtp = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
-smtp.login("leeeunbin001122@gmail.com", "Eunbin0881**")
+smtp.login("leeeunbin001122@gmail.com", "#")
 smtp.send_message(message)
 smtp.quit()
 

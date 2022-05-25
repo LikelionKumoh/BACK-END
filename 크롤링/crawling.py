@@ -1,15 +1,61 @@
-
-import datetime
+import smtplib
+from email.message import EmailMessage
+from urllib import response
+import requests
 from bs4 import BeautifulSoup
-import urllib.request
+from soupsieve import select
+import re
 
-now = datetime.datetime.now()
-nowDate = now.strftime('현재 시각은 %Y년 %m월 %d일 %H시 %M분 입니다.')
 
-print("\n       ※ Python Webcrawling Project 1 ※ \n ")
-print('   환영합니다, ' + nowDate)
-print('  ○>> #오늘의 #날씨 #요약 \n')
-webpage = urllib.request.urlopen('https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EA%B5%AC%EB%AF%B8%EB%82%A0%EC%94%A8&oquery=%EC%84%9C%EC%9A%B8%EB%82%A0%EC%94%A8&tqi=hoyA8wp0J14ssBapHLRssssstIw-146624')
-soup = BeautifulSoup(webpage, 'html.parser')
-temperature_info = soup.find('div',"temperature_info")
-print('--> 현재 구미 날씨 : ' , temperature_info.get_text(), '입니다')
+def sendEmail(addr):
+    reg="^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9]+\.[a-zA-z]{2,3}$"
+    if bool(re.match(reg, addr)):
+        smtp.send_message(message)
+        print("정상적으로 메일이 발송되었습니다. ")
+    else:
+        print("유효한 이메일 주소가 아닙니다.")
+url="https://factchecker.or.kr/hot_issues" 
+
+headers = {
+    'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36'
+}
+
+response = requests.get(url, headers=headers)
+
+
+
+if response.status_code == 200:
+    html = response.text
+    soup = BeautifulSoup(html, 'html.parser')
+    div = soup.select_one('div.pt-8')
+    hot_issues = div.select('div > div > div> a')
+    for hot_issues in hot_issues:
+        print("실시간 이슈는 ", hot_issues.get_text())
+else : 
+    print(response.status_code)
+    
+text_file=open("factchecker.text","w",encoding='UTF-8')
+text_file.write(response.text)
+text_file.close()
+
+SMTP_SEVER="smtp.gmail.com"
+SMTP_PORT=465
+
+message=EmailMessage()
+message.set_content("kaggle datasets")
+
+message["Subject"]="크롤링해서 메일보내기[진준호]"
+message["From"]="#######@gmail.com"
+message["To"]="#######@gmail.com"
+
+with open("factchecker.text","rb") as text:
+    text_file=text.read()
+
+message.add_attachment(text_file, maintype='text', subtype='text', filename = text.name)
+
+smtp = smtplib.SMTP_SSL(SMTP_SEVER, SMTP_PORT)
+smtp.login("#######@gmail.com","#######")
+
+sendEmail("kit@likelion.org")
+
+smtp.quit()

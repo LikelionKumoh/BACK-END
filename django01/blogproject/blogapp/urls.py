@@ -17,6 +17,6 @@ urlpatterns = [
     # 상세 페이지
     path('detail/<int:post_id>', views.detail, name='detail'),
 
-
-
+    # 댓글 저장
+    path('create_comment/<int:post_id>', views.create_comment, name='create_comment'),
 ] 

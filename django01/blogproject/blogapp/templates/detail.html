@@ -9,8 +9,24 @@
 <h3>본문</h3>
 {{ post_detail.body }} 
 
-
+<h3>본문에 추가된 첨부파일</h3>
 {% if post_detail.photo %}
     {{ post_detail.photo.url }}
     <img src="{{ post_detail.photo.url }} " height="100">
 {% endif %}  
+
+<hr>
+<h3>댓글</h3>
+<form method="POST" action="{% url 'create_comment' post_detail.id %}">
+    {% csrf_token %}
+    {{ comment_form }}
+    <input type="submit"/>
+</form>
+
+<hr>
+
+# 댓글 목록들
+{% for comment in post_detail.comment_set.all %}
+<p>{{ comment }}</p>
+<hr>
+{% endfor %}

@@ -14,5 +14,9 @@ urlpatterns = [
     #django modelform을 이용해 블로그 객체 만들기
     path('modelcreate/', views.modelcreate, name='modelcreate'),
 
+    # 상세 페이지
+    path('detail/<int:post_id>', views.detail, name='detail'),
 
-]
+
+
+] 

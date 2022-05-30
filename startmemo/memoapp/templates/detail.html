@@ -1,0 +1,15 @@
+<h1>제목</h1>
+{{ memo_detail.title}}
+<h2>날짜</h2>
+{{ memo_detail.data}}
+<h3>본문</h3>
+{{ memo_detail.body}} {% comment %}
+<form method="POST" action="{% url 'new_comment' memo_detail.id%}">
+  {% csrf_token %} {{comment_form}}
+  <input type="submit" value="댓글 입력" />
+</form>
+
+{% for comment in memo_detail.comment_set.all %}
+<p>{{ comment }}</p>
+<hr />
+{% endfor %} {% endcomment %}

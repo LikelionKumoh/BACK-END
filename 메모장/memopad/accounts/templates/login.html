@@ -1,0 +1,13 @@
+{% load socialaccount %}
+
+<h1>Login</h1>
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    username : <input type='text' name='username'><br/>
+    password : <input type='password' name='password'>
+    <br/>
+    <input type="submit" value="로그인">
+</form>
+<a href="{% provider_login_url 'google' %}">구글 로그인</a><br>
+<a href="{% provider_login_url 'naver' %}">네이버 로그인</a><br>
+<a href="{% provider_login_url 'kakao' %}">카카오 로그인</a><br>

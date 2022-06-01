@@ -1,0 +1,26 @@
+{% if user.is_authenticated %}
+{% load socialaccount %}
+안녕하세요, {{user.username }}님!<br/>
+<a href="{% url 'logout' %}">로그아웃</a>
+<a href="{% url 'new' %}">새글 작성</a>
+{%else%}
+아직 로그인이 되지 않았어요..<br/>
+<a href="{% url 'login' %}">로그인</a></br>
+<a href="{% provider_login_url 'google'%}"> 구글 계정으로 로그인</a></br>
+<a href="{% provider_login_url 'kakao'%}"> 카카오 계정으로 로그인</a></br>
+<a href="{% provider_login_url 'facebook' method='oauth2'%}"> 페이스북 계정으로 로그인</a>
+{%endif%}
+
+{% for mem in memo %}
+    <a href="{% url 'detail' mem.id %}"><h3>제목: {{mem.title}}</h3></a>
+{% endfor %}
+
+{% if memo.has_previous %}
+<a href="?page=1">첫 페이지</a>
+<a href="?page={{memo.previous_page_number}}">이전 페이지</a>
+{% endif %}
+
+{% if memo.has_next %}
+<a href="?page={{memo.next_page_number}}">다음 페이지</a>
+{% endif %}
+

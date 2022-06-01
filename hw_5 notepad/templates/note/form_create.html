@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Memo</title>
+</head>
+<body>
+<form action="" method="POST">
+    {% csrf_token %}
+    <h1>New_memo</h1>
+    <hr>
+    <table>
+        {{form.as_table}}
+    </table>
+    <input type="submit" value="Add">
+</form>
+</body>
+</html>

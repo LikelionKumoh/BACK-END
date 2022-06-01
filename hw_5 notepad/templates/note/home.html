@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note Pad</title>
+</head>
+<body>
+    <h1>Note pad</h1>
+    {% if user.is_authenticated %}
+    <a href="accounts/logout">logout</a>
+    {% else %}
+     <a href="/accounts/login/">login</a>
+    {% endif %}
+    <hr>
+    {% if memo_list %}
+    <p>
+        {% for memo in memo_list %}
+            <p><a href="{% url 'note:detail' memo.id %}">{{memo}}</a>
+            <br>create_date : {{memo.date}}
+            <br>{{memo.content}}</p>
+        {% endfor %}
+    </p>
+
+    {% else %}
+        <p>메모가 없습니다.</p>
+    {% endif %}
+    <br>
+    <ul>
+        {% if memo_list.has_previous %}
+        <li>
+            <a href="?page={{memo_list.previous_page_number}}">이전</a>
+        </li>
+        {% else %}
+        <li>
+            <a href="">이전</a>
+        </li>
+        {% endif %}
+
+        {% for page_number in memo_list.paginator.page_range %}
+        {% if page_number >= memo_list.number|add:-5 and page_number <= memo_list.number|add:5 %}
+        {% if page_number == memo_list.number %}
+            <li>
+                <a href="?page={{page_number}}">{{page_number}}</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="?page={{page_number}}">{{page_number}}</a>
+            </li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+
+        {%if memo_list.has_next %}
+        <li>
+            <a href="?page={{memo_list.next_page_number}}">다음</a>
+        </li>
+        {% else %}
+        <li>
+            <a href="">다음</a>
+        </li>
+        {% endif %}
+    </ul>
+    <br>
+    {% if user.is_authenticated %}
+    <a href="{% url 'note:create' %}">글쓰기</a>
+    {% else %}
+    <a href="/accounts/login/">글쓰기</a>
+    {% endif %}
+</body>
+</html>
+
+

@@ -1,0 +1,28 @@
+{% load socialaccount %}
+
+
+<h1>로그인 창</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" id="username" name="username" placeholder="Enter Your ID...">
+    <br>
+    <br>
+    <input type="password" id="password" name="password" placeholder="Enter Your PW...">
+    <br>
+    <br>
+    <input type="submit" value="login!">
+    <br>
+    <br>
+
+    <!-- 카카오, 네이버, 구글로 로그인 구현 -->
+    <a href="{% provider_login_url 'google' %}">Google계정으로 로그인</a>
+    <br>
+    <br>
+    <a href="{% provider_login_url 'naver' %}">네이버계정으로 로그인</a>
+    <br>
+    <br>
+    <a href="{% provider_login_url 'kakao' %}">Kakao계정으로 로그인</a>
+    <br>
+    <br>
+    <a href="{% url 'index' %}">돌아가기</a>
+</form>

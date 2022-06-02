@@ -1,11 +1,11 @@
 <h1>Main 페이지</h1>
 
-{% for memo in memos %}
-<!-- 이 공간엔 블로그 글 목록 보여줌 -->
-    <a href="{% url 'detail' memo_id %}"><h3>메모 : {{ memo.body }}</h3></a>
-    
-    <h4>작성날짜 : {{ memo.reg_date }}</h4>
+{% if user.is_authenticated %}
+<a href="{% url 'logout' %}">로그아웃</a><br>
 
+
+{% for memo in memos %}
+    <a href="{% url 'detail' memo.id %}"><h3>메모 : {{ memo.body }}</h3></a>
 {% endfor %}
 
 
@@ -13,4 +13,9 @@
 
 <a href="{% url 'create' %}">새 글 작성</a>
 
- 
+
+
+{% else %}
+<a href="{% url 'login' %}">로그인</a>
+
+{% endif %}

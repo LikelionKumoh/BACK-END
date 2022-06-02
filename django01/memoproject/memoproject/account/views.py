@@ -1,8 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import auth
+from django.contrib.auth.models import User
 
-# def home(request):
-#     #  블로그 글들을 모두 띄우는 코드
-#     # posts = Blog.objects.all()
-#     posts = Blog.objects.filter().order_by('reg_date')
+def login(request):
+    if request.method == "POST":
+        user_id = request.POST['username']
+        pwd = request.POST['password']
+        user = auth.authenticate(request, username=user_id, password=pwd)
+        if user is not None:
+            auth.login(request, user)
+            return redirect('main')
+        else:
+            return render(request, 'login.html')
+    else:
+        return render(request, 'login.html')
 
-#     return render(request, 'index.html', {'posts' : posts})
+def logout(request):
+    auth.logout(request)
+    return redirect('main')

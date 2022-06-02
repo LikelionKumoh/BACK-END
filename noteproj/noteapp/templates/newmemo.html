@@ -1,0 +1,9 @@
+<h1> 새 글 작성 페이지</h1>
+<form action = "" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        <!-- form.as_table / form.as_p / as_ul...해당 태그로 감싼것 처럼 보여잠 -->
+        {{ form.as_table }}  
+    </table>
+    <input type = "submit" value="새 글 생성하기">
+</form>

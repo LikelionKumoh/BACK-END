@@ -1,0 +1,44 @@
+{% if user.is_authenticated %}
+안녕하세요, {{ user.username }}님!
+<a href = "{% url 'logout' %}">로그아웃</a>
+{% else %}
+아직 로그인이 되지 않았어요</br>
+<a href = "{% url 'login' %}">로그인</a></br>
+
+{% endif %}
+
+<h1> My Memo </h1>
+
+
+{% for post in posts %}
+    <a href="{% url 'detail' post.id %}"><h3>제목: {{post.title}}</h3></a>
+    <h4>날짜: {{ post.date}}</h4>
+    <!-- {{ post.body }} -->
+
+{% endfor %}
+
+{% if posts.has_previous %}
+<a href="?page=1">
+    첫페이지
+</a>
+<a href="?page={{posts.previous_page_number}}">
+    이전페이지
+</a>
+{% endif %}
+
+<span>{{posts.number}}</span>
+<span>/</span>
+<span>{{posts.paginator.num_pages}}</span>
+
+{% if posts.has_next%}
+<a href="?page={{posts.next_page_number}}">
+    다음페이지
+</a>
+<a href="?page={{posts.paginator.num_pages}}">
+    마지막 페이지
+</a>
+{% endif %}
+
+{% if user.is_authenticated %}
+</br><a href="{% url 'newmemo' %}"> 새 메모 작성</a>
+{% endif %}

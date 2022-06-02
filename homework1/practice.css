@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800&display=swap');
+
+* {
+    font-family: 'Montserrat';
+}
+.headbox{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    margin-left: auto;
+    margin-right:auto;
+}
+.logobox{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightbox{
+    width: 80%;
+}
+.menubox{
+    display: flex;
+    justify-content: flex-end;
+}
+.menubox p{
+    margin: 5px;
+    border-bottom: 1px solid #606060;
+    color:#606060;
+    font-weight: 600;
+    padding-bottom: 2px;
+}
+.searchbox{
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    align-items: center;
+}
+.searchbox input{
+    width:400px;
+    height: 30px;
+    margin-left: 20px;
+    padding-left: 10px;
+    border: 7px solid #ffb266;
+    margin-bottom:0px ;
+    
+}
+.searchbox p{
+    background-color: #F6AD40;
+    margin-left: 2px;
+    font-size: 20px;
+    padding-top: 10px;  
+    padding-bottom: 10px;
+    width: 50px;
+    text-align: center;
+}
+.subbox{
+    display: flex;
+    width: 1000px;
+    margin-left: auto;
+    margin-right:auto;
+    border-bottom: 6px double #F6AD40;
+    border-top: 6px double #F6AD40;
+}
+.subbox .title{
+    margin: 5px;
+    font-weight: bold;
+    margin-left: 100px;
+    font-size: 20px;
+    color:#404040;
+    margin-right: 25px;
+}
+.subbox p{
+    margin: 5px;
+    margin-top: 8px;
+    font-weight: 600;
+    color: #606060;
+}
+.mainbox{
+    display: flex;
+    width: 800px;
+    margin-left: auto;
+    margin-right:auto;
+}
+.newsbox{
+    padding: 5px;
+    width: 80%;
+    margin-top: 10px;
+}
+.newsbox p{
+    background-color: #ffb266;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color:#404040;
+}
+.bootcampbox{
+    display: flex;
+}
+.bootcampbox .row1{
+    flex: 1;
+}
+.bootcampbox .row2{
+    flex: 1;
+}
+.bootcampbox .row3{
+    flex: 1;
+}
+.bootcampbox p{
+    background-color: #FFF8EC;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 15px;
+    
+}
+#content1{
+    color: #000099;
+}
+#content2{
+    color: #990099;
+}
+#content3{
+    color: #00cc66;
+}
+#content4{
+    color: #990000;
+}
+#content5{
+    color: #994c00;
+}
+#content6{
+    color: #009900;
+}
+#content7{
+    color: #66cc00;
+}
+#content8{
+    color: #cc6600;
+}
+#content9{
+    color: #663300;
+}
+.trackbox{
+    display: flex;
+}
+.trackbox .row1{
+    flex: 1;
+    text-align: center;
+    border-bottom: 3px solid #e0e0e0;
+    border-right: 3px solid #e0e0e0;
+    padding-top: 50px;
+    margin: 2px;
+}
+.trackbox .row2{
+    flex: 1;
+    text-align: center;
+    border-bottom: 3px solid #e0e0e0;
+    border-right: 3px solid #e0e0e0;
+    padding-top: 50px;
+    margin: 2px;
+}
+.trackbox .row3{
+    flex: 1;
+    text-align: center;
+    border-bottom: 3px solid #e0e0e0;
+    border-right: 3px solid #e0e0e0;
+    padding-top: 50px;
+    margin: 2px;
+}
+.trackbox p{
+    padding-top: 100px;
+    background-color: white;
+    padding: 10px;
+    padding-top: 50px;
+    font-size: 15px;
+    color:#404040
+}
+.loginbox{
+    margin: 5px;
+    background-color: rgb(240, 239, 239);
+    margin-top: 15px;
+    padding-bottom: 1px;
+}
+
+.input_login{
+    display: flex;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+.id_pw{
+    padding-right: 5px;
+    background-color: rgb(255, 237, 211);
+    margin-top: 10px;;
+}
+.id_pw p{
+    font-weight: bolder;
+    font-size: 20px;
+    margin: 10px;
+}
+.id{
+    display: flex;
+    margin-top: 5px;
+    margin-bottom:  5px;
+}
+.id input{
+    width: 130px;
+    margin-left: 14px ;
+    height: 35px;
+    border: 1px solid white;
+}
+.pw{
+    display: flex;
+    margin-top: 5px;
+}
+.pw input{
+    width: 130px;
+    height: 35px;
+    border: 1px solid white;
+}
+.login{
+    background-color: #ff9933;
+    height: 55px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.login p{
+    text-align: center;
+    color: white;
+    font-weight: 500;
+}
+
+.sign_up p{
+    background-color: #ff8000;
+    color: white;
+    font-size: 20px;
+    font-weight:500;
+    text-align: center;
+    margin: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.adbox{
+    text-align: center;
+}
+.logodesign p{
+    background-color: #ffb266;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color:#404040;
+}
+.group{
+    display: flex;
+}
+.group .row1{
+    flex :1;
+    text-align: center;
+}
+.group .row2{
+    flex :1;
+    text-align: center;
+}
+.group img{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.madeby p{
+    background-color: white;
+    font-size: 15px;
+    color:#f0f0f0;
+    text-align: end;
+}

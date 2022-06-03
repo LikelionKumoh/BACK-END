@@ -1,0 +1,14 @@
+<h1>django form을 이용한 새 글 작성 페이지</h1>
+
+
+<!-- enctype : form data가 서버로 제출될 때 해당 데이터의 인코딩 방법을 명시합니다.
+이 속성은 form의 http method 속성값이 post인 경우에만 사용할 수 있습니다. -->
+<!-- multipart/form-data : form 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용합니다. (바이너리 데이터) -->
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %} 
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="새 글 작성">
+</form> 

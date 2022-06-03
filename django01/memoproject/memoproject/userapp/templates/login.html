@@ -1,0 +1,19 @@
+{% load socialaccount %}
+{% providers_media_js %}
+
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    username : <input type='text' name='username' value="" required><br/>
+    password : <input type='password' name='password' value="" required><br/>
+    <input type="submit" value="로그인">
+</form>
+<br>
+
+
+<div>
+    <a href="{% provider_login_url 'naver' %}">네이버로 계속하기
+    <br>
+    <a href="{% provider_login_url 'kakao' %}">카카오로 계속하기</a>     
+    <br>
+    <a href="{% provider_login_url 'google' %}">구글로 계속하기</a>
+</div>

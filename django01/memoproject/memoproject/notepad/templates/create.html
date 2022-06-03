@@ -1,0 +1,9 @@
+<h1>메모 작성 페이지</h1>
+
+<form action="" method="POST" >
+    {% csrf_token %} 
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="등록">
+</form> 

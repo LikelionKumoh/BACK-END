@@ -7,4 +7,5 @@ class Memo(models.Model):
     def __str__(self):
         return self.body
 
-
+    def summary(self):
+        return self.body[:20]

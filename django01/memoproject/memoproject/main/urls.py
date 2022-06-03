@@ -1,9 +1,11 @@
 from django.urls import path, include
 from main import views
+import userapp.urls, notepad.urls
+
 
 urlpatterns = [
     path('', views.main, name="main"),
-    path('create/', views.create, name="create"),
-    path('detail/<int:memo_id>', views.detail, name="detail"),
+    path('accounts/', include(userapp.urls)),
+    path('notepad/', include(notepad.urls))
 ] 
     

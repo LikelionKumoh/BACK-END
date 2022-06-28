@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c6bd21cf42.js" crossorigin="anonymous"></script>
+    
+    <script>
+        function search_onclick_submit(){
+            let name = document.getElementById('search').value;
+            let choice = document.getElementById('drop').value;
+            alert('http://127.0.0.1' + '/' + choice + '/' + name);
+            
+        }
+    </script>
+    
+    <title>Musinsa_search</title>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://image.msscdn.net/mfile_s01/fb/share_musinsa.png" alt="">
+        <div class="colabo">X</div>
+        <img src="https://cdn-apply.likelion.org/static/imgs/basiclogo_E_V.png" alt="">
+    </div>
+
+    <div class="sub_title">멋쟁이 무신사처럼</div>
+    <hr>
+
+    <div class="search_box">
+    <select id='drop' name="filter" class="select_box">
+        <option value="brand">브랜드</option>
+        <option value="goods">상품명</option>
+    </select>
+    <input id='search' type="text" class="search" onKeypress="javascript:if(event.keyCode==13) {search_onclick_submit()}">
+    </div> 
+</body>
+</html>

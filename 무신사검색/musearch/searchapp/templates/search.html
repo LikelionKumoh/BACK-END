@@ -1,0 +1,35 @@
+<style>
+    table {
+        margin: auto;
+        width: 60%;
+        border-collapse: collapse;
+        text-align: center;
+    }
+</style>
+<table border="1">
+    {% for item in obj %}
+    <tr>
+        <td colspan="2">
+            <img src="{{item.Image}}" width="100%">
+        </td>
+    </tr>
+    <tr>
+        <td>상품명</td>
+        <td>{{ item.Name }}</td>
+    </tr>
+    <tr>
+        <td>순위</td>
+        <td>{{ item.Rank }}</td>
+    </tr>
+    <tr>
+        <td>가격</td> :
+        <td>{{ item.Price }}</td>
+    </tr>
+    <tr>
+        <td>브랜드</td>
+        <td>{{ item.Brand }}</td>
+    </tr>
+    {% empty %}
+    <h1>검색결과가 없습니다.</h1>
+    {% endfor %}
+</table>

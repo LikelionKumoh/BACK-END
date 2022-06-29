@@ -1,0 +1,16 @@
+<h1>옷 검색하기</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="검색">
+</form>
+
+<body>
+    {% csrf_token %}
+    <hr>
+    {% for item in obj %}
+    <p>{{ forloop.counter }}위. {{ item.Name }}</p>
+    <hr>
+    {% endfor %}
+</body>

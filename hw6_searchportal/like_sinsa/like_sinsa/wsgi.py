@@ -1,5 +1,5 @@
 """
-WSGI config for crawl_site project.
+WSGI config for like_sinsa project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'crawl_site.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'like_sinsa.settings')
 
 application = get_wsgi_application()

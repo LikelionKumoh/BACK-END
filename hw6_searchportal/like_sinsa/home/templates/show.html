@@ -1,0 +1,20 @@
+{% if goods_list %}
+<table>
+    <th>순위</th>
+    <th>사진</th>
+    <th>브랜드</th>
+    <th>제품명</th>
+    <th>가격</th>
+    <th>좋아요</th>
+    {% for goods in goods_list%}
+        <tr>
+            <td>{{goods.rank}}</td>
+            <td><img src="https:{{goods.image}}"></td>
+            <td>{{goods.brand_name}}</td>
+            <td>{{goods.goods_name}}</td>
+            <td>{{goods.price}}</td>
+            <td>{{goods.recommand_cnt}}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endif %}

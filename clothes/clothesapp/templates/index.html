@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유신사</title>
+</head>
+<body>
+    <h1> 유신사 </h1>
+
+    <form method="POST" action="{% url 'search' %}">
+        {% csrf_token %}        
+        <input class="search-box" type="search" name="searched" aria-label="Search">
+        <input type="submit">
+    </form>
+
+
+    <table border="1" width =80%>
+        <th>랭킹</th>
+        <th>이미지</th>
+        <th>브랜드명</th>
+        <th>제품명</th>
+        <th>가격</th>
+        <th>좋아요 수</th>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.rank}}</td>
+            <td><img src = '{{ product.img }}' width ="100" height="100"></td>
+            <td>{{ product.brand }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.like }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>

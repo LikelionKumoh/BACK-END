@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>성으니의 쇼핑~</title>
+    <style>
+        .a {
+            border-collapse: collapse;
+        }
+        .search {
+            display: flex;
+            height: 50px;
+        }
+        .fitSize{
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search">    
+        <form class="fitSize" action="http://127.0.0.1:8000" method="post">
+            {% csrf_token %}
+            <input class="fitSize"  type="search" placeholder="브랜드 검색" aria-label="Search" name="q" value="{{q}}">
+            <button class="fitSize" type="submit">Search</button>
+        </form>
+        <a href="/"><button class="fitSize">초기화</button></a>
+    </div>
+    {% if table_detail %}
+    <table border="1" align="center" border-collapse = "collapse" class = 'a' width = "100%">
+        <thead>
+            <tr align="center">
+                <th>순위</th>
+                <th>사진</th>
+                <th>브랜드</th>
+                <th>제품명</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for table in table_detail%}
+            <tr align="center">
+                <td>{{table.rank}}</td>
+                <td><img class="image" src="{{table.img}}"/></td>
+                <td>{{table.brand}}</td>
+                <td>{{table.item}}</td>
+                <td>{{table.price}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+</html>
+
+
+

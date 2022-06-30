@@ -8,6 +8,6 @@ class ClothingData(models.Model):
     price = models.CharField(max_length=50)
     product = models.CharField(max_length=200)
     #like = models.CharField(max_length=50)
-    
+
     def __str__(self):
-        return self.product
+        return self.product  

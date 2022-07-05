@@ -1,16 +1,18 @@
 <h1>옷 검색하기</h1>
-
 <form action="" method="POST">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="검색">
 </form>
-
-<body>
-    {% csrf_token %}
-    <hr>
-    {% for item in obj %}
-    <p>{{ forloop.counter }}위. {{ item.Name }}</p>
-    <hr>
-    {% endfor %}
-</body>
+{% if user.is_authenticated %}
+<a href="{% url 'accounts:logout' %}">로그아웃</a>
+<hr>
+{% for item in obj %}
+<p>{{ forloop.counter }}위. {{ item.Name }}</p>
+<hr>
+{% endfor %}
+{% else %}
+<a href="{% url 'accounts:login' %}">로그인</a>
+<br>
+<a href="{% url 'accounts:signup' %}">회원가입</a>
+{% endif %}

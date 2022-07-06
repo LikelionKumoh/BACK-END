@@ -1,10 +1,15 @@
 from django import forms
+from .models import UserModel
 
-class UserForm(forms.Form):
-    username=forms.CharField(max_length=30)
-    password = forms.CharField(max_length=12,widget=forms.PasswordInput,required=True)
-
-class CreateUserForm(forms.Form):
-    username=forms.CharField(max_length=30)
-    password = forms.CharField(max_length=12,widget=forms.PasswordInput,required=True)
-    check_Password = forms.CharField(max_length=12,widget=forms.PasswordInput,required=True)
+class UserForm(forms.ModelForm):
+    password=forms.CharField(widget=forms.PasswordInput)
+    class Meta:
+        model=UserModel
+        fields='__all__'
+        
+class CreateUserForm(forms.ModelForm):
+    password=forms.CharField(widget=forms.PasswordInput)
+    checkpassword=forms.CharField(widget=forms.PasswordInput)
+    class Meta:
+        model=UserModel
+        fields='__all__'        

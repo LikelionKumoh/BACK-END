@@ -1,41 +1,48 @@
 from django.shortcuts import render, redirect
+from requests import RequestException
+from searchapp.models import SearchModel
 from .forms import UserForm, CreateUserForm
-from django.contrib.auth.models import User
-from django.contrib import auth
-
+from .models import UserModel
 
 def login(request):
+    obj=SearchModel.objects.all()
     form=UserForm
-    if request.method =="POST":
-        username=request.POST['username']
-        password=request.POST['password']
-        user = auth.authenticate(request, username=username, password=password)
-        
-        if user is not None:
-            auth.login(request, user)
-            return redirect('/')
+    data=request.POST
+    if request.method=="POST":
+        #아이디가 존재하고
+        if UserModel.objects.filter(username=data['username']).exists():
+            getUser=UserModel.objects.get(username=data['username'])
+            #비밀번호가 일치한다면
+            if getUser.password==data['password']:
+                return render(request, 'searchapp/index.html',{'obj':obj,'status':'login'})
+            else:
+                return render(request,'accounts/login.html',{'form':form,'status':'fail1'})
         else:
-            return render(request, 'login.html', {'form' : form, 'status': 'fail'})
+            return render(request,'accounts/login.html',{'form':form,'status':'fail2'})
     else:
-        return render(request, 'login.html',{'form' : form})
+        return render(request, 'accounts/login.html', {'form':form})
     
 def logout(request):
-    auth.logout(request)
     return redirect('/')
     
         
 def signup(request):
     form=CreateUserForm
-    #아이디 중복체크
-    if request.method=='POST':
-        if User.objects.filter(username=request.POST['username']).exists():
-            return render(request, 'signup.html', {'form' : form, 'status': 'duplicate'})
-        #처음 입력한 비밀번호와 두번째로 입력한 비밀번호가 일치할 때
-        if request.POST['password'] == request.POST['check_Password']:
-            user=User.objects.create_user(request.POST['username'], password=request.POST['password'])
-            auth.login(request, user)
-            return redirect('/')
-        else:
-            return render(request, 'signup.html', {'form' : form, 'status': 'diff'})
-    else:    
-        return render(request, 'signup.html',{'form': form})
+    obj=SearchModel.objects.all()
+    if request.method =="POST":
+        data=request.POST
+        #아이디 중복체크
+        if UserModel.objects.filter(username=data['username']).exists():
+            return render(request, 'accounts/signup.html', {'form' : form, 'status': 'duplicate'})
+        #만약 비밀번호와 두번째 비밀번호가 갔다면
+        if request.POST['password'] != request.POST['checkpassword']:
+            return render(request, 'accounts/signup.html', {'form' : form, 'status': 'diff'})
+        #위의 경우가 아니면 db에 입력받은 내용 저장            
+        UserModel.objects.create(
+                username=data['username'],
+                password=data['password'],
+            ).save()
+        return render(request,'searchapp/index.html',{'obj':obj,'status':'login'})
+        #return render(request, 'searchapp/index.html', {'status': 'login'})
+    else:
+        return render(request,'accounts/signup.html', {'form':form})

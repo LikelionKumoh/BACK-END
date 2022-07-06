@@ -12,6 +12,6 @@ def home(request):
         searchword=request.POST.get('search')
         if searchword:
             obj=obj.filter(Q(Name__contains=searchword) | Q(Brand__contains=searchword))
-        return render(request, 'search.html', {'obj':obj})            
+        return render(request, 'searchapp/search.html', {'obj':obj})            
     else:                
-        return render(request,'index.html',{'obj':obj,'form':form})
+        return render(request,'searchapp/index.html',{'obj':obj,'form':form})

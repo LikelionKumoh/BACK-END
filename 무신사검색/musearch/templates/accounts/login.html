@@ -1,5 +1,10 @@
 <h1>로그인하기</h1>
-{% if status == "fail" %}
+{% if status == "fail1" %}
+<script>
+    alert('비밀번호가 일치하지 않습니다.');
+</script>
+{% endif %}
+{% if status == "fail2" %}
 <script>
     alert('계정이 존재하지 않습니다.');
 </script>

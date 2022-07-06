@@ -35,5 +35,7 @@ def signup(request):
             user=User.objects.create_user(request.POST['username'], password=request.POST['password'])
             auth.login(request, user)
             return redirect('/')
+        else:
+            return render(request, 'signup.html', {'form' : form, 'status': 'diff'})
     else:    
         return render(request, 'signup.html',{'form': form})

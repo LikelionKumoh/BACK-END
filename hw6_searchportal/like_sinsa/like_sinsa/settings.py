@@ -10,18 +10,32 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import json, os
 from pathlib import Path
+from django.core.exceptions import ImproperlyConfigred
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(BASE_DIR)
+
+secret_file = os.path.join(BASE_DIR, 'screts.join')
+
+with open(secret_file) as f:
+    secrets = json.loads(f.read())
+
+
+def get_secret(setting, secrets=secrets):
+    try:
+        return secrets[setting]
+    except KeyError:
+        error_msg = f"Set the {setting} environment variable"
+        raise ImproperlyConfigred(error_msg)
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^(xkgo2!)$i$py7(f1ul8gv6ms4*ygr6ofy$+u5iqgd8&ke6f+'
+SECRET_KEY = get_secret("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,8 +92,12 @@ WSGI_APPLICATION = 'like_sinsa.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'myboard',
+        'USER': 'root',
+        'PASSWORD': get_secret("DB_PASSWORD"),
+        'HOST': 'localhost',
+        'PORT': ''
     }
 }
 

@@ -12,12 +12,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import json, os
 from pathlib import Path
-from django.core.exceptions import ImproperlyConfigred
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-secret_file = os.path.join(BASE_DIR, 'screts.join')
+secret_file = os.path.join(BASE_DIR, 'secrets.json')
 
 with open(secret_file) as f:
     secrets = json.loads(f.read())
@@ -28,7 +28,7 @@ def get_secret(setting, secrets=secrets):
         return secrets[setting]
     except KeyError:
         error_msg = f"Set the {setting} environment variable"
-        raise ImproperlyConfigred(error_msg)
+        raise ImproperlyConfigured(error_msg)
 
 
 # Quick-start development settings - unsuitable for production
@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'like_sinsa.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'myboard',
+        'NAME': 'board',
         'USER': 'root',
         'PASSWORD': get_secret("DB_PASSWORD"),
         'HOST': 'localhost',

@@ -23,10 +23,15 @@
     <title>Musinsa_search</title>
 </head>
 <body>
+    {% if messages %}
+        {% for message in messages %}
+            {{message.tags}}
+            {{message.message}}
+        {% endfor %}
+    {% endif %}
     <div class="nav">
-        <a href="">Login</a>
-        /
-        <a href="">Logout</a>
+        <a href="{% url 'home:signin'%}">Login</a>
+        <a href="{% url 'home:signout'%}">Logout</a>
     </div>
     <div class="logo">
         <img src="https://image.msscdn.net/mfile_s01/fb/share_musinsa.png" alt="">

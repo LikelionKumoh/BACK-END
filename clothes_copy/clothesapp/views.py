@@ -38,7 +38,8 @@ def login(request):
         k = len(res)
         while i < k:
             if res[i] == email and res2[i] == password:
-                return render(request, 'index.html', {'email':email})
+                products = Product.objects.all()
+                return render(request,'index.html',{'products':products, 'email':email})
             i += 1
         messages.info(request, "Check name OR password")
         return redirect('login')

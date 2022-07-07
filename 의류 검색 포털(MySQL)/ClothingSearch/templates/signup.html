@@ -1,0 +1,10 @@
+<h1>회원가입</h1>
+<form method="POST">
+    {% csrf_token %}
+    ID: <br> <input name="username" type="text"><br>
+    PW: <br> <input name="password" type="text"><br>
+    PW_Check: <br> <input name="passwordcheck" type="text"><br>
+    name: <br> <input name="name" type="text"><br>
+    <br><br>
+    <input type="submit" value="Sign Up">
+</form>

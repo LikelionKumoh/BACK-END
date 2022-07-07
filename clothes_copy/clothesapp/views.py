@@ -42,7 +42,7 @@ def login(request):
             i += 1
         messages.info(request, "Check name OR password")
         return redirect('login')
-    return render(request, 'index.html')
+    return render(request, 'login.html')
 
 def register(request):
     if request.method == "POST":

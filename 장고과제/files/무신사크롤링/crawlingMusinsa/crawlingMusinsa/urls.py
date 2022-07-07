@@ -1,14 +1,14 @@
 
 from django.contrib import admin
 from django.urls import path
-from main import views
-from accounts import views as account_views
+from parse import views
+from accounts.views import SignUpView, logout, LoginView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
-    path('login/',account_views.login,name='login'),
-    path('logout/',account_views.logout,name='logout'),
-    path('signup/',account_views.signup,name='signup'),
+    path('login/',LoginView.as_view(),name='login'),
+    path('logout/',logout,name='logout'),
+    path('signup/',SignUpView.as_view(),name='signup'),
 ]

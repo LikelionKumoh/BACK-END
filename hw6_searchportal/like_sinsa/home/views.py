@@ -12,7 +12,9 @@ import json
 
 
 def home(request):
-    return render(request, 'home/home.html')
+    login_stat = True if request.session.get('user') else False
+    context = {'login_stat': login_stat}
+    return render(request, 'home/home.html', context)
 
 
 def search(request, choice, text):
@@ -20,11 +22,10 @@ def search(request, choice, text):
     user_id = request.session.get('user')
 
     if user_id:
-        user = User.objects.get(pk=user_id)
         Goods.objects.all().delete()
         get_data(text, choice)
         goods_list = Goods.objects.all()
-        context = {'goods_list': goods_list}
+        context = {"goods_list": goods_list}
         return render(request, 'home/show.html', context)
     else:
         messages.info(request, '로그인을 해주세요!')
@@ -50,7 +51,9 @@ class CreateView(View):
         else:
             User.objects.create(user_id = data['user_id'], password = data['password'])
             messages.info(request, '회원가입 성공!')
-            return redirect('http://127.0.01:8000/')
+            login_stat = True if request.session.get('user') else False
+            context = {"login_stat": login_stat}
+            return render(request, 'home/home.html', context)
 
     def get(self, request):
         return render(request, 'home/register.html')
@@ -65,7 +68,10 @@ class LoginView(View):
             user = User.objects.get(user_id=data['user_id'])
             request.session['user'] = user.id
             messages.info(request, '로그인 성공!')
-            return redirect('home:home')
+            login_stat = True if request.session.get('user') else False
+            context = {"login_stat": login_stat}
+            print(context)
+            return render(request, 'home/home.html', context)
         else:
             context = {
                 "result": "id 또는 pw가 틀렸습니다"
@@ -73,4 +79,4 @@ class LoginView(View):
             return HttpResponse(json.dumps(context),content_type="application/json")
 
     def get(self, request):
-        return render(request, 'http://127.0.01:8000/')
+        return render(request, 'home/login.html')

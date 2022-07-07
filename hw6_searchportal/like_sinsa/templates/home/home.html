@@ -30,8 +30,11 @@
         {% endfor %}
     {% endif %}
     <div class="nav">
-        <a href="{% url 'home:signin'%}">Login</a>
+        {% if login_stat %}
         <a href="{% url 'home:signout'%}">Logout</a>
+        {% else %}
+        <a href="{% url 'home:signin'%}">Login</a>
+        {% endif %}
     </div>
     <div class="logo">
         <img src="https://image.msscdn.net/mfile_s01/fb/share_musinsa.png" alt="">

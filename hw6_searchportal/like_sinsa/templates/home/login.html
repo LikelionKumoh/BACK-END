@@ -43,7 +43,7 @@
         },
         error : function(xhr,status,)
         {
-            location.href = 'http://127.0.0.1:8000/';
+            location.href = '{% url 'home:home' %}';
         },
         });
     });

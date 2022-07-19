@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            {{message.tags}}
+            {{message.message}}
+        {% endfor %}
+    {% endif %}
+    <form id="test">
+    <div>
+        <label for="user_id">ID:</label>
+        <input type="text" name="user_id" id="user_id"/>
+    </div>
+
+    <div>
+        <label for="user_pw">PW:</label>
+        <input type="password" name="password" id="user_pw"/>
+    </div>
+        <input id="btn1"type="button" value="submit">
+    </form>
+    <a href="{% url 'home:signup' %}">Register</a>
+    <script>
+        $('#btn1').on('click',function(event){
+        var formData = $('#test').serializeArray();
+
+        obj = {};
+        jQuery.each(formData, function(){
+            obj[this.name] = this.value;
+        });
+        $.ajax({
+            cache : false,
+            url : "{% url 'home:signin' %}" ,
+            type : 'POST',
+            dataType: "json",
+            data : JSON.stringify(obj),
+            success : function(data){
+            var res = data['result']
+            alert(res);
+        },
+        error : function(xhr,status,)
+        {
+            location.href = '{% url 'home:home' %}';
+        },
+        });
+    });
+
+    </script>
+</body>
+</html>

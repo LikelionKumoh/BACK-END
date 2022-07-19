@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+ <form id="test">
+    <div>
+        <label for="user_id">ID:</label>
+        <input type="text" name="user_id" id="user_id"/>
+    </div>
+
+    <div>
+        <label for="user_pw">PW:</label>
+        <input type="password" name="password" id="user_pw"/>
+    </div>
+        <input id="btn1"type="button" value="register">
+    </form>
+    <script>
+        $('#btn1').on('click',function(event){
+        var formData = $('#test').serializeArray();
+
+        obj = {};
+        jQuery.each(formData, function(){
+            obj[this.name] = this.value;
+        });
+        $.ajax({
+            cache : false,
+            url : "{% url 'home:signup' %}" ,
+            type : 'POST',
+            dataType: "json",
+            data : JSON.stringify(obj),
+             success : function(data){
+            var res = data['result'];
+            var uid = data['uid'];
+            console.log(uid);
+            alert(res);
+        },
+        error : function(xhr,status,)
+        {
+            location.href = '{% url 'home:home' %}';
+        },
+        });
+    });
+
+    </script>
+</body>
+</html>

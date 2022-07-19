@@ -6,12 +6,15 @@ def detail(request):
     initCrawlData()
     table_detail = Table.objects.all()
     if request.method == 'GET':
-        return render(request, 'table.html', {'table_detail':table_detail})
+        return render(request, 'show/table.html', {'table_detail':table_detail})
     else:
         q = request.POST.get('q',"")
         if q:
             table_detail = table_detail.filter(brand__icontains=q)
-            return render(request, 'table.html', {'table_detail':table_detail})
+            return render(request, 'show/table.html', {'table_detail':table_detail})
+
+def home(request):
+    return render(request,'show/home.html')
 
 def initCrawlData():
     allData = Table.objects.all()

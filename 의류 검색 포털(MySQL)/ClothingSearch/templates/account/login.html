@@ -1,0 +1,16 @@
+<h1>Musinsa</h1>
+<h2>Login</h2>
+
+<div> {{success}} </div>
+<div> {{error}} </div>
+</br>
+<div class="login">
+    <form action="{% url 'login' %}" method="POST" >
+        {% csrf_token %}
+        username : <input type='text' name='username'><br/>
+        password : <input type='password' name='password'>
+        <br/>
+        <input type="submit" value="로그인" style="margin-top:15px;">
+        <a href="{% url 'signup' %}">회원가입</a>
+    </form>
+</div> 

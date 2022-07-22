@@ -1,0 +1,27 @@
+{% if login_stat %}
+안녕하세요 {{user.username}}님!
+<a href="{%url 'logout'%}">로그아웃</a>
+{% else %}
+<a href="{% url 'login' %}">로그인</a>
+<a href="{% url 'signup' %}">회원가입</a>
+{% endif %}
+<hr>
+<h1>MUSINSA</h1>
+<hr>
+<form action="{{resdata}}" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="submit">    
+</form>
+<hr><hr>
+{% if user.is_authenticated %}
+{% for i in items %}
+{{i.rank}}<br/>
+<img src="{{i.img}}"><br/>
+{{i.brand}}<br/>
+{{i.name}}<br/>
+{{i.price}}<br/>
+리뷰수: {{i.like}}<br/>
+<br/>
+{% endfor %}
+{% endif %}
